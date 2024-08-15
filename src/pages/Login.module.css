@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15rem;
+}
+header {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 256px 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+.wrapper img {
+    max-width: 300px;
+    max-height: 200px;
+}
+.loginInput {
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: column;
+
+    font-weight: bold;
+    gap: .3rem;
+}
+.loginInput label {
+    visibility: visible;
+    max-height: none;
+
+    color: var(--gray-200);
+}
+.loginInput input {
+    padding: .25rem;
+    outline: none;
+}
+.loginInput input::placeholder {
+    color: var(--white);
+}
+
+.loginInput:focus-within label {
+    visibility: hidden;
+    max-height: 0;
+}
+.loginInput:focus-within input::placeholder {
+    color: var(--gray-200);
+}
+.loginButton {
+    margin-top: .3rem;
+    text-align: center;
+    background-color: var(--green-100);
+    color: var(--white);
+
+    padding: .5rem .9rem;
+    border-radius: .3rem;
+    cursor: pointer;
+}
+.disabled {
+    background-color: var(--green-500);
+    color: var(--gray-200);
+    cursor: not-allowed;
+}
