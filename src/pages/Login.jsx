@@ -47,6 +47,8 @@ export function Login() {
                 </div>
                 <img src='../public/relogio-de-ponto-idclass.png' />
             </div>
+
+            <footer>Copyright © 2024 Site Title. All rights reserved.</footer>
         </div>
     )
 }

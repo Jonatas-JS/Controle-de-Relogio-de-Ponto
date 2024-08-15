@@ -14,7 +14,11 @@
     --green-500: #00875f;
 
     --blue-200: #0AADF8;
+    --blue-700: #35415a;
     --blue-900: #181D28;
+
+    --height-header: 35vh;
+    --height-footer: 35vh;
 }
 
 * {
