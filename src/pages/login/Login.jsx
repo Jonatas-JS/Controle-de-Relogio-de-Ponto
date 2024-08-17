@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Fingerprint } from '@phosphor-icons/react'
 import styles from './Login.module.css';
+import { Link } from 'react-router-dom'
 
 export function Login() {
     const [inputText, setInputText] = useState('');
@@ -15,11 +17,14 @@ export function Login() {
     };
 
     const isButtonDisabled = !inputText.trim() || !inputPassword.trim();
-    console.log(isButtonDisabled);
 
     return (
         <div className={styles.container}>
-            <header>CRP - Controle de Relógio de Ponto</header>
+            <header>
+                <div className={styles.headerLogin}>
+                    <h3>CRP - Controle de Relógio de Ponto</h3><Fingerprint size={39} />
+                </div>
+            </header>
             <div className={styles.wrapper}>
                 <div className={styles.loginContainer}>
                     <h3>Login de Usuário</h3>

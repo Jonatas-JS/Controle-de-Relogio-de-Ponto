@@ -1,15 +1,23 @@
 .container {
-    /* height: 100vh; */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-header {
+.container header {
+    display: flex;
     height: var(--height-header);
+    align-items: end;
+}
+.headerLogin {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+header h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    align-content: end;
 }
 .wrapper {
     min-height: calc(100vh - var(--height-header) - var(--height-footer));
@@ -37,6 +45,7 @@ header {
     color: var(--gray-200);
 }
 .loginInput input {
+    color: var(--blue-900);
     padding: .25rem;
     outline: none;
 }
@@ -67,7 +76,8 @@ header {
     cursor: not-allowed;
 }
 footer {
-    height: var(--height-footer);
+    font-size: .8rem;
+    height: calc(var(--height-footer) - .5rem);
     display: flex;
     color: var(--blue-700);
     align-items: end;

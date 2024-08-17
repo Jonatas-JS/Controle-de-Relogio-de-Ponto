@@ -1,0 +1,23 @@
+.navBar {
+ background-color: var(--blue-700);
+}
+.navBar header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    padding: 1.5rem;
+}
+.listMenu {
+    display: flex;
+    gap: 2rem;
+}
+.listMenu p {
+    background-color: var(--blue-700);
+    padding: .5rem .9rem;
+    border-radius: .5rem;
+    font-weight: bold;
+}
+.listMenu p:hover {
+    background-color: var(--green-300)
+}
