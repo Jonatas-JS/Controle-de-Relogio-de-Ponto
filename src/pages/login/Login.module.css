@@ -60,6 +60,9 @@ header h3 {
 .loginInput:focus-within input::placeholder {
     color: var(--gray-200);
 }
+.loginInput a {
+    text-decoration: none;
+}
 .loginButton {
     margin-top: .3rem;
     text-align: center;

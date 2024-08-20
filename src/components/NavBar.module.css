@@ -11,13 +11,19 @@
 .listMenu {
     display: flex;
     gap: 2rem;
+    list-style-type: none;
 }
-.listMenu p {
-    background-color: var(--blue-700);
+.listMenu li {
     padding: .5rem .9rem;
     border-radius: .5rem;
     font-weight: bold;
 }
-.listMenu p:hover {
-    background-color: var(--green-300)
+.listMenu li:hover {
+    background-color: var(--green-300);
+}
+.listMenu li:last-child {
+    background-color: var(--red-400);
+}
+.listMenu li:hover:last-child {
+    background-color: var(--red-300);
 }

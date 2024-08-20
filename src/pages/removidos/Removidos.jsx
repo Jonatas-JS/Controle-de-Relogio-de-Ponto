@@ -1,7 +1,10 @@
+import { NavBar } from '../../components/NavBar'
 import styles from './Removidos.module.css'
 
 export function Removidos() {
     return(
-        <div className={styles.container}></div>
+        <div className={styles.containerRemovidos}>
+            <NavBar />
+        </div>
     )
 }

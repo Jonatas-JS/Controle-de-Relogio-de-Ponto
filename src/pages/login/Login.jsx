@@ -45,9 +45,11 @@ export function Login() {
                         onChange={handleInputChange}
                         id='password' 
                         />
+                        <Link to="/home">
                         <div 
                         className={isButtonDisabled ? `${styles.loginButton} ${styles.disabled}` : styles.loginButton}
                         >ENTRAR</div>
+                        </Link>
                     </div>
                 </div>
                 <img src='../public/relogio-de-ponto-idclass.png' />

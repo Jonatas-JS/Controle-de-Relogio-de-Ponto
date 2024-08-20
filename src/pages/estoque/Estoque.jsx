@@ -1,7 +1,10 @@
 import styles from './Estoque.module.css'
+import { NavBar } from '../../components/NavBar'
 
 export function Estoque() {
     return(
-        <div className={styles.container}></div>
+        <div className={styles.containerEstoque}>
+            <NavBar />
+        </div>
     )
 }
