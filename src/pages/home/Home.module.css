@@ -1,0 +1,22 @@
+.containerHome {
+    height: calc(100vh - var(--height-navbar));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.primaryServiceSelection {
+    display: flex;
+    gap: 1rem;
+}
+.checkboxRegistro label, .checkboxRemocao label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.primaryServiceSelection label input[type="checkbox"] {
+    margin: 0 .3rem;
+    width: 1rem;
+    height: 1rem;
+}

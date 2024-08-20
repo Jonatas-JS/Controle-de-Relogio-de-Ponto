@@ -56,14 +56,12 @@ export function NavBar() {
                 <div>
                 <ul className={styles.listMenu}>{pages.map(item => {
                     return (
-                        <li
+                        <Link
+                        to={item.path}
                         key={item.id}
-                        className={item.classNameItem}
-                        >
-                            <Link 
-                            to={item.path}
-                            >{item.name}</Link>
-                        </li>
+                        className={item.classNameItem}>
+                                {item.name}
+                        </Link>
                     )
                 })}</ul>
                 </div>

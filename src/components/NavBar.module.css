@@ -5,25 +5,31 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 3rem;
+    height: var(--height-navbar);
     padding: 1.5rem;
 }
 .listMenu {
     display: flex;
     gap: 2rem;
+    align-items: center;
     list-style-type: none;
 }
-.listMenu li {
+.listMenu a {
     padding: .5rem .9rem;
     border-radius: .5rem;
     font-weight: bold;
 }
-.listMenu li:hover {
+.listMenu a:hover {
     background-color: var(--green-300);
 }
-.listMenu li:last-child {
+.menuAtivos:hover {
+    background-color: var(--blue-200);
+}
+.listMenu a:last-child {
+    padding: .5rem .9rem;
+    border-radius: .5rem;
     background-color: var(--red-400);
 }
-.listMenu li:hover:last-child {
+.listMenu a:last-child:hover {
     background-color: var(--red-300);
 }
