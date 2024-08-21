@@ -20,3 +20,29 @@
     width: 1rem;
     height: 1rem;
 }
+
+/* -----------SELEÇÃO DO PRÉDIO----------- */
+.selectionREPs {
+    margin-top: 2rem;
+}
+.predioSelect {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    max-width: 12rem;
+    gap: .3rem;
+}
+.predioList {
+    background-color: var(--blue-700);
+    width: 3.8rem;
+    padding: 1.5rem;
+}
+.predioList:hover {
+    background-color: var(--green-500);
+    cursor: pointer;
+}
+.predioList:last-child {
+    flex-grow: 1;
+    max-width: none;
+}
