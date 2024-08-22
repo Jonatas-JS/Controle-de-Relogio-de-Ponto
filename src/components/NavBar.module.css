@@ -1,6 +1,7 @@
 .navBar {
- background-color: var(--blue-700);
+    background-color: var(--blue-700);
 }
+
 .navBar header {
     display: flex;
     justify-content: space-between;
@@ -8,12 +9,14 @@
     height: var(--height-navbar);
     padding: 1.5rem;
 }
+
 .listMenu {
     display: flex;
     gap: 2rem;
     align-items: center;
     list-style-type: none;
 }
+
 .listMenu a {
     padding: .5rem .9rem;
     border-radius: .5rem;
@@ -22,14 +25,12 @@
 .listMenu a:hover {
     background-color: var(--green-300);
 }
-.menuAtivos:hover {
+.menuAtivos a:hover {
     background-color: var(--blue-200);
 }
-.listMenu a:last-child {
-    padding: .5rem .9rem;
-    border-radius: .5rem;
+.listMenu .menuSair a {
     background-color: var(--red-400);
 }
-.listMenu a:last-child:hover {
+.listMenu .menuSair a:hover {
     background-color: var(--red-300);
 }

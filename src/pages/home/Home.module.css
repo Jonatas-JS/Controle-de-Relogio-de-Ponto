@@ -21,6 +21,15 @@
     height: 1rem;
 }
 
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
 /* -----------SELEÇÃO DO PRÉDIO----------- */
 .selectionREPs {
     margin-top: 2rem;
@@ -33,16 +42,16 @@
     max-width: 12rem;
     gap: .3rem;
 }
-.predioList {
+.predioList, .repLis {
     background-color: var(--blue-700);
     width: 3.8rem;
     padding: 1.5rem;
 }
-.predioList:hover {
+.predioList:hover, .repLis:hover {
     background-color: var(--green-500);
     cursor: pointer;
 }
-.predioList:last-child {
+.predioList:last-child, .repLis:last-child {
     flex-grow: 1;
     max-width: none;
 }

@@ -70,11 +70,12 @@ export function Home() {
     const [selectedOption, setSelectedOption] = useState('selectedRegistro');
 
     const handleOptionChange = (event) => {
-        setSelectedOption(event.target);
+        setSelectedOption(event.target.value);
     };
 
     function handlePredioSelected(event) {
-        console.log(event.target)
+        const predioSelected = event.targe
+        console.log(predioSelected);
     };
 
     return (
@@ -106,17 +107,28 @@ export function Home() {
 
                     </div>
                     <div className={styles.selectionREPs}>
-                        <div>
+                        <div className={styles.wrapper}>
                             <div className={styles.predioSelect}>
                                 {prediosSelect.map((item) => {
                                     return (
                                         <div
                                             className={styles.predioList}
                                             key={Math.random()}
-                                            value={item}
                                             onClick={handlePredioSelected}
                                         >
                                             <p>{item}</p>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+
+                            <div>
+                                {REPs.map((item) => {
+                                    return (
+                                        <div
+                                            className={styles.repLis}
+                                            key={Math.random}>
+                                            <p>{item.descricao}</p>
                                         </div>
                                     )
                                 })}

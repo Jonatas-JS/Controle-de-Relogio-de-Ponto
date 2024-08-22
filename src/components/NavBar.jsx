@@ -49,21 +49,27 @@ export function NavBar() {
         },
     ];
 
-    return(
+    return (
         <div className={styles.navBar}>
             <header>
-            <House size={32} />
+                <House size={32} />
                 <div>
-                <ul className={styles.listMenu}>{pages.map(item => {
+                    <ul className={styles.listMenu}>
+                        {pages.map(item => {
                     return (
+                        <li
+                         key={item.id}
+                         className={styles[item.classNameItem]}>
                         <Link
                         to={item.path}
-                        key={item.id}
-                        className={item.classNameItem}>
+                        >
                                 {item.name}
                         </Link>
+                        </li>
+
                     )
-                })}</ul>
+                })}
+                    </ul>
                 </div>
             </header>
         </div>
