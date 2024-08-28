@@ -9,6 +9,16 @@
     height: var(--height-navbar);
     padding: 1.5rem;
 }
+.iconMenuPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .2rem .3rem;
+    color: var(--white);
+    background-color: var(--blue-900);
+    border-radius: .3rem;
+}
+
 
 .listMenu {
     display: flex;
@@ -23,10 +33,7 @@
     font-weight: bold;
 }
 .listMenu a:hover {
-    background-color: var(--green-300);
-}
-.menuAtivos a:hover {
-    background-color: var(--blue-200);
+    background-color: var(--blue-900);
 }
 .listMenu .menuSair a {
     background-color: var(--red-400);

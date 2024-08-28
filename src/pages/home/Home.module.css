@@ -6,25 +6,28 @@
 }
 .primaryServiceSelection {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
 }
-.checkboxRegistro label, .checkboxRemocao label {
+.checkboxRegistro label, .checkboxRemocao label, .checkboxEstoque label {
     display: flex;
     flex-direction: row;
     align-items: center;
     font-weight: bold;
     cursor: pointer;
 }
-.primaryServiceSelection label input[type="checkbox"] {
+.primaryServiceSelection label input[type="radio"] {
     margin: 0 .3rem;
     width: 1rem;
-    height: 1rem;
+    
 }
 
 
 .wrapper {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 1rem;
 }
@@ -34,24 +37,48 @@
 .selectionREPs {
     margin-top: 2rem;
 }
-.predioSelect {
+.predioSelect, .repList {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    align-items: center;
+    /* align-items: center; */
     max-width: 12rem;
     gap: .3rem;
 }
-.predioList, .repLis {
+.predioList, .repPredio {
     background-color: var(--blue-700);
     width: 3.8rem;
+    height: 3.8rem;
     padding: 1.5rem;
 }
-.predioList:hover, .repLis:hover {
-    background-color: var(--green-500);
+.predioList:hover, .repPredio:hover {
+    background-color: var(--blue-200);
     cursor: pointer;
 }
-.predioList:last-child, .repLis:last-child {
+.predioList:last-child, .repPredio:last-child {
     flex-grow: 1;
     max-width: none;
 }
+.forwardButton {
+    display: flex;
+    justify-content: center;
+}
+.forwardButton button {
+    width: 50%;
+    margin-top: 1rem;
+    padding: .8rem;
+    color: var(--gray-200);
+    background-color: var(--green-500);
+    border: none;
+    border-radius: .3rem;
+    text-align: center;
+    cursor: not-allowed
+}
+.forwardButton button:checked:hover {
+    color: var(--white);
+    background-color: var(--green-300);
+    cursor: pointer;
+}
+/* .forwardButton button {
+    background-color: transparent;
+} */

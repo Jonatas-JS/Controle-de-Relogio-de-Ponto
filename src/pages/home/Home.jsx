@@ -3,79 +3,61 @@ import { NavBar } from '../../components/NavBar';
 import styles from './Home.module.css'
 
 export function Home() {
-    const prediosSelect = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    const prediosList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
     const REPs = [
         {
-            predio_1: [
-                {
-                    predio: '1',
-                    coletor: '',
-                    descricao: 'Predio 1 - I',
-                    rep: 'I',
-                    ip: '',
-                    gr_acesso: '',
-                },
-                {
-                    predio: '1',
-                    coletor: '',
-                    descricao: 'Predio 1 - II',
-                    rep: 'II',
-                    ip: '',
-                    gr_acesso: '',
-                },
-            ],
-            predio_2: [
-                {
-                    predio: '2',
-                    coletor: '',
-                    descricao: 'Predio 2 - I',
-                    rep: 'I',
-                    ip: '',
-                    gr_acesso: '',
-                },
-                {
-                    predio: '2',
-                    coletor: '',
-                    descricao: 'Predio 2 - II',
-                    rep: 'II',
-                    ip: '',
-                    gr_acesso: '',
-                },
-            ],
-            predio_3: [
-                {
-                    predio: '3',
-                    coletor: '',
-                    descricao: 'Predio 3 - I',
-                    rep: 'I',
-                    ip: '',
-                    gr_acesso: '',
-                },
-                {
-                    predio: '3',
-                    coletor: '',
-                    descricao: 'Predio 3 - II',
-                    rep: 'II',
-                    ip: '',
-                    gr_acesso: '',
-                },
-            ],
+            predio: 1,
+            coletor: '',
+            descricao: 'Predio 1 - II',
+            rep: 'II',
+            ip: '',
+            gr_acesso: '',
         },
-
+        {
+            predio: 2,
+            coletor: '',
+            descricao: 'Predio 2 - I',
+            rep: 'I',
+            ip: '',
+            gr_acesso: '',
+        },
+        {
+            predio: 2,
+            coletor: '',
+            descricao: 'Predio 2 - II',
+            rep: 'II',
+            ip: '',
+            gr_acesso: '',
+        },
+        {
+            predio: 3,
+            coletor: '',
+            descricao: 'Predio 3 - I',
+            rep: 'I',
+            ip: '',
+            gr_acesso: '',
+        },
+        {
+            predio: 3,
+            coletor: '',
+            descricao: 'Predio 3 - II',
+            rep: 'II',
+            ip: '',
+            gr_acesso: '',
+        },
     ];
 
-    console.log(REPs[0].predio_1[0].descricao)
-
     const [selectedOption, setSelectedOption] = useState('selectedRegistro');
+    const [predioSelected, setPredioSelected] = useState(0);
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
     };
 
-    function handlePredioSelected(event) {
-        const predioSelected = event.targe
-        console.log(predioSelected);
+    const handleBuildingClick = (predio) => {
+        setPredioSelected(predio);
+        console.log(setPredioSelected)
     };
 
     return (
@@ -104,36 +86,50 @@ export function Home() {
                                 />Remoção
                             </label>
                         </div>
+                        <div className={styles.checkboxEstoque}>
+                            <label>
+                                <input
+                                    type='radio'
+                                    value='selectedEstoque'
+                                    checked={selectedOption === 'selectedEstoque'}
+                                    onChange={handleOptionChange}
+                                />Estoque
+                            </label>
+                        </div>
 
                     </div>
                     <div className={styles.selectionREPs}>
                         <div className={styles.wrapper}>
                             <div className={styles.predioSelect}>
-                                {prediosSelect.map((item) => {
+                                {prediosList.map((predio) => {
                                     return (
                                         <div
                                             className={styles.predioList}
                                             key={Math.random()}
-                                            onClick={handlePredioSelected}
+                                            onClick={() => handleBuildingClick(predio)}
                                         >
-                                            <p>{item}</p>
+                                            <p>{predio}</p>
                                         </div>
                                     )
                                 })}
                             </div>
 
-                            <div>
-                                {REPs.map((item) => {
+                            <div className={styles.repList}>
+                                {REPs.filter(relogio => relogio.rep === predioSelected).map(relogio => {
                                     return (
                                         <div
-                                            className={styles.repLis}
-                                            key={Math.random}>
-                                            <p>{item.descricao}</p>
+                                            className={styles.repPredio}
+                                            key={Math.random()}>
+                                            <p>{relogio.rep}</p>
                                         </div>
                                     )
                                 })}
                             </div>
 
+                        </div>
+
+                        <div className={styles.forwardButton}>
+                            <button>Avançar</button>
                         </div>
                     </div>
                 </div>
