@@ -42,7 +42,15 @@ export function Home() {
             predio: 3,
             coletor: '',
             descricao: 'Predio 3 - II',
-            rep: 'II',
+            rep: 'III',
+            ip: '',
+            gr_acesso: '',
+        },
+        {
+            predio: 3,
+            coletor: '',
+            descricao: 'Predio 3 - II',
+            rep: 'IV',
             ip: '',
             gr_acesso: '',
         },
@@ -50,14 +58,23 @@ export function Home() {
 
     const [selectedOption, setSelectedOption] = useState('selectedRegistro');
     const [predioSelected, setPredioSelected] = useState(0);
+    const [repsSelected, setRepsSelected] = useState([]);
+    const [isActive, setIsActive] = useState(false);
 
     const handleOptionChange = (event) => {
         setSelectedOption(event.target.value);
     };
-
-    const handleBuildingClick = (predio) => {
-        setPredioSelected(predio);
-        console.log(setPredioSelected)
+    const handleRepsSelected = (relogio) => {
+        if (repsSelected.find(rep => rep.descricao === relogio.descricao)) {
+            repsSelected.filter(rep => rep.descricao !== relogio.descricao)
+            document.querySelector(styles.predioList).add.className(styles.repSelect)
+        } else {
+            setRepsSelected(relogio);
+        }
+        console.log(relogio);
+    };
+    const getClassName = () => {
+        return isActive ? styles.repSelect : styles.repPredio
     };
 
     return (
@@ -106,7 +123,7 @@ export function Home() {
                                         <div
                                             className={styles.predioList}
                                             key={Math.random()}
-                                            onClick={() => handleBuildingClick(predio)}
+                                            onClick={() => setPredioSelected(predio)}
                                         >
                                             <p>{predio}</p>
                                         </div>
@@ -115,10 +132,11 @@ export function Home() {
                             </div>
 
                             <div className={styles.repList}>
-                                {REPs.filter(relogio => relogio.rep === predioSelected).map(relogio => {
+                                {REPs.filter(relogio => relogio.predio === predioSelected).map(relogio => {
                                     return (
                                         <div
-                                            className={styles.repPredio}
+                                            onClick={() => {handleRepsSelected(relogio); setIsActive(!isActive)}}
+                                            className={getClassName()}
                                             key={Math.random()}>
                                             <p>{relogio.rep}</p>
                                         </div>

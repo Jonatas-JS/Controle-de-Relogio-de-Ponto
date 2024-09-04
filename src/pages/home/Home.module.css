@@ -50,10 +50,12 @@
     width: 3.8rem;
     height: 3.8rem;
     padding: 1.5rem;
+    border-radius: .3rem;
+    cursor: pointer;
+
 }
 .predioList:hover, .repPredio:hover {
     background-color: var(--blue-200);
-    cursor: pointer;
 }
 .predioList:last-child, .repPredio:last-child {
     flex-grow: 1;
@@ -79,6 +81,10 @@
     background-color: var(--green-300);
     cursor: pointer;
 }
-/* .forwardButton button {
-    background-color: transparent;
-} */
+.repSelect {
+    background-color: var(--blue-200);
+    width: 3.8rem;
+    height: 3.8rem;
+    padding: 1.5rem;
+    border-radius: .3rem;
+}
