@@ -52,7 +52,6 @@
     padding: 1.5rem;
     border-radius: .3rem;
     cursor: pointer;
-
 }
 .predioList:hover, .repPredio:hover {
     background-color: var(--blue-200);
@@ -87,4 +86,38 @@
     height: 3.8rem;
     padding: 1.5rem;
     border-radius: .3rem;
+    cursor: pointer;
+}
+
+/* -----------MODAL RELOGIOS SELECIONADOS----------- */
+.modalRepSelected {
+    position: relative;
+    inset: 2.5rem;
+    border-radius: .5rem;
+    padding: 2rem 3rem;
+    color: var(--white);
+    background-color: var(--blue-900);
+}
+.footerBarOptions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: end;
+    gap: .8rem;
+}
+
+.finishModalButton button {
+    padding: .6rem .8rem;
+    background-color: var(--green-500);
+    color: var(--white);
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.closeModalButton button {
+    padding: .6rem .8rem;
+    background-color: var(--red-400);
+    color: var(--white);
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
 }

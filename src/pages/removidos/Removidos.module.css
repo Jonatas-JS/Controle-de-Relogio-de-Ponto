@@ -1,0 +1,20 @@
+.modalContentRemovidos {
+    position: relative;
+    inset: 2.5rem;
+    border: 4px solid var(--blue-900);
+    border-radius: .5rem;
+    padding: 2rem 3rem;
+    color: var(--blue-900);
+    background-color: var(--blue-700);
+}
+.closeModalButton {
+    margin-top: 1rem;
+}
+.closeModalButton button {
+    padding: .6rem .8rem;
+    background-color: var(--red-400);
+    color: var(--white);
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+}

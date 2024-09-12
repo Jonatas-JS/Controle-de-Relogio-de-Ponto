@@ -1,6 +1,21 @@
 import { useState } from 'react';
 import { NavBar } from '../../components/NavBar';
+import Modal from 'react-modal';
 import styles from './Home.module.css'
+
+// Define o elemento base para o modal
+Modal.setAppElement('#root');
+
+const customStyles = {
+    overlay: {
+        position: 'absolute',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(53, 65, 90, 0.8)',
+        backdropFilter: 'blur(1.5px)',
+    }
+};
 
 export function Home() {
     const prediosList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -42,14 +57,14 @@ export function Home() {
             predio: 3,
             coletor: '',
             descricao: 'Predio 3 - II',
-            rep: 'III',
+            rep: 'II',
             ip: '',
             gr_acesso: '',
         },
         {
             predio: 3,
             coletor: '',
-            descricao: 'Predio 3 - II',
+            descricao: 'Predio 3 - IV',
             rep: 'IV',
             ip: '',
             gr_acesso: '',
@@ -67,15 +82,45 @@ export function Home() {
     const handleRepsSelected = (relogio) => {
         if (repsSelected.find(rep => rep.descricao === relogio.descricao)) {
             repsSelected.filter(rep => rep.descricao !== relogio.descricao)
-            document.querySelector(styles.predioList).add.className(styles.repSelect)
         } else {
-            setRepsSelected(relogio);
+            setRepsSelected(relogio.descricao);
         }
         console.log(relogio);
     };
     const getClassName = () => {
         return isActive ? styles.repSelect : styles.repPredio
     };
+
+    // Estado para armazenar os objetos selecionados
+    const [selectedObjects, setSelectedObjects] = useState([]);
+
+    // Estado para controlar a exibição do modal
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+
+    // Função para selecionar/deselecionar um objeto
+    const handleSelect = (object) => {
+        setSelectedObjects((prevSelected) => {
+            // Verifica se o objeto já está selecionado
+            if (prevSelected.includes(object)) {
+                // Se estiver, remove-o
+                return prevSelected.filter((obj) => obj !== object);
+            } else {
+                // Se não estiver, adiciona-o
+                return [...prevSelected, object];
+            }
+        });
+    };
+
+    // Função para abrir o modal
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
+
+    // Função para fechar o modal
+    const closeModal = () => {
+        setModalIsOpen(false);
+    };
+
 
     return (
         <div className={styles.container}>
@@ -135,7 +180,7 @@ export function Home() {
                                 {REPs.filter(relogio => relogio.predio === predioSelected).map(relogio => {
                                     return (
                                         <div
-                                            onClick={() => {handleRepsSelected(relogio); setIsActive(!isActive)}}
+                                            onClick={() => { handleRepsSelected(relogio); setIsActive(!isActive) }}
                                             className={getClassName()}
                                             key={Math.random()}>
                                             <p>{relogio.rep}</p>
@@ -147,11 +192,39 @@ export function Home() {
                         </div>
 
                         <div className={styles.forwardButton}>
-                            <button>Avançar</button>
+                            <button
+                                onClick={openModal}
+                            >Avançar</button>
                         </div>
+
                     </div>
                 </div>
             </div>
+
+            <Modal
+                className={styles.modalRepSelected}
+                style={customStyles}
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Relógios Selecionados"
+            >
+                <h2>Relógios Selecionados</h2>
+                <ul>
+                    {setRepsSelected}
+                </ul>
+
+                <div className={styles.footerBarOptions}>
+                    <div className={styles.closeModalButton}>
+                        <button
+                            onClick={closeModal}
+                        >Voltar</button>
+                    </div>
+                    <div className={styles.finishModalButton}>
+                        <button
+                        >Concluir</button>
+                    </div>
+                </div>
+            </Modal>
         </div>
     );
 };
