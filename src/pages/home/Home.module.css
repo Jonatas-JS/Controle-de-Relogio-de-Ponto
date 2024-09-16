@@ -91,12 +91,14 @@
 
 /* -----------MODAL RELOGIOS SELECIONADOS----------- */
 .modalRepSelected {
+    max-width: 50vw;
     position: relative;
     inset: 2.5rem;
     border-radius: .5rem;
     padding: 2rem 3rem;
     color: var(--white);
     background-color: var(--blue-900);
+    box-shadow: 0 .5rem 1.5rem var(--blue-900);
 }
 .footerBarOptions {
     margin-top: 1rem;
@@ -120,4 +122,47 @@
     border: none;
     border-radius: .5rem;
     cursor: pointer;
+}
+
+/* -----------LIST DE REPS SELECIONADOS----------- */
+.REPsInModalList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-top: .3rem;
+    list-style: none;
+}
+.REPsInModalList li {
+    /* margin-top: .5rem; */
+    line-height: 1rem;
+    padding: .5rem;
+    border-radius: .5rem;
+    background-color: var(--blue-700);
+}
+.modalRepOptions {
+    max-width: 40vw;
+    margin-top: .5rem;
+}
+.modalRepOptions form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.modalRepOptions form select, .modalRepOptions form input {
+    /* line-height: 1.5rem; */
+    padding: .3rem .5rem;
+    color: var(--blue-900);
+    border: none;
+    border-radius: .3rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.modalRepOptions form select:focus, .modalRepOptions form input:focus {
+    outline: none;
+    color: var(--blue-900);
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.modalRepOptions form input:last-child {
+    width: 22.6vw;
 }

@@ -24,6 +24,14 @@ export function Home() {
         {
             predio: 1,
             coletor: '',
+            descricao: 'Predio 1 - I',
+            rep: 'I',
+            ip: '',
+            gr_acesso: '',
+        },
+        {
+            predio: 1,
+            coletor: '',
             descricao: 'Predio 1 - II',
             rep: 'II',
             ip: '',
@@ -209,9 +217,35 @@ export function Home() {
                 contentLabel="Relógios Selecionados"
             >
                 <h2>Relógios Selecionados</h2>
-                <ul>
-                    {setRepsSelected}
+                <ul className={styles.REPsInModalList}>
+                    {REPs.map((relogio) => {
+                        return (
+                            <li key={Math.random}>{relogio.descricao}</li>
+                        )
+                    })}
                 </ul>
+
+                <div className={styles.modalRepOptions}>
+                    <form>
+                        <select className={styles.selectProblemaRep}>
+                            <option disabled selected>Selecione o problema:</option>
+                            <option>Bloqueado</option>
+                            <option>Ticket pendente</option>
+                        </select>
+
+                        <input type='datetime-local' />
+
+                        <select className={styles.selectMotivoProvavelRep}>
+                            <option disabled selected>Motivo provável:</option>
+                            <option>Cabo frouxo</option>
+                            <option>Desligamento</option>
+                            <option>Desligamento / Queda de energia</option>
+                            <option>Forçamento da saída do Ticket</option>
+                        </select>
+
+                        <input type='text' placeholder='Observações:' />
+                    </form>
+                </div>
 
                 <div className={styles.footerBarOptions}>
                     <div className={styles.closeModalButton}>
